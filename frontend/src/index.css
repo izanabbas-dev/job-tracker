@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+/* Class-based dark mode (Tailwind v4 equivalent of darkMode: 'class') */
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  @apply bg-slate-50 text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-200;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+/* Horizontal scrollers that should stay swipeable without a visible scrollbar */
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
